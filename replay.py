@@ -49,7 +49,7 @@ def main():
     print(f"Parsing {filename}...")
     wanted_fields = ["X", "Y", "team_num", "team_name", "team_clan_name", "is_alive"]
     df = parser.parse_ticks(wanted_fields)
-    bbox = df["X"].min(), df["Y"].min(), df["X"].max(), df["Y"].max()
+    bbox = df["X"].min(), df["Y"].min(), df["X"].max(), df["Y"].max() # ToDo: proper implementation
     team_names = df["team_clan_name"].unique()
     round_start_ticks = parser.parse_event("round_start")["tick"]
     freeze_end_ticks = parser.parse_event("round_freeze_end")["tick"]
