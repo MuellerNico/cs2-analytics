@@ -43,8 +43,8 @@ def main():
     plt.figure(figsize=(10, 6))
     for player in df['attacker_name'].unique():
         sns.kdeplot(data=df[df['attacker_name'] == player], x='kill_time', label=player, fill=True, common_norm=False, alpha=0.4)
-    plt.title("Density Plot of Kill Time by Player")
-    plt.xlabel("Relative Time in Game")
+    plt.title("Density Plot of Kill Time by Player (how late in the round)")
+    plt.xlabel("Time")
     plt.ylabel("Density")
     plt.legend(title="Attacker", loc="upper right")
     plt.show()
@@ -53,8 +53,8 @@ def main():
     plt.figure(figsize=(10, 6))
     sns.swarmplot(data=df, x='kill_time', y='attacker_name', size=4)
     #sns.violinplot(data=df, x='kill_time', y='attacker_name', inner=None, color='lightgray')
-    plt.title("Bee Swarm Plot of Kill Times by Player")
-    plt.xlabel("Relative Time in Game")
+    plt.title("Bee swarm plot of Kill Time by Player (how late in the round)")
+    plt.xlabel("Time (normalized to round duration)")
     plt.ylabel("Attacker")
     plt.show()
 

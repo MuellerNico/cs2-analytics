@@ -59,7 +59,7 @@ def main():
 
     pygame.init()
     screen = pygame.display.set_mode(WINDOW_SIZE)
-    pygame.display.set_caption(f"Nico's 2D Replay: {team_names[0]} vs {team_names[1]}")
+    pygame.display.set_caption(f"2D Replay: {team_names[0]} vs {team_names[1]}")
     manager = pygame_gui.UIManager(WINDOW_SIZE)
     minimap = load_minimap(map_name)
 
